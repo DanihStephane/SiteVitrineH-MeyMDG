@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="H-Mey MDG - Mode et Style à Madagascar">
+  <main>
+    <!-- Hero Section -->
+    <section class="h-screen relative flex items-center">
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="/hero-bg.jpg" 
+          alt="Mode à Madagascar" 
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+      
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-2xl text-white" data-aos="fade-up">
+          <h1 class="text-5xl md:text-7xl font-playfair font-bold mb-6">
+            La Mode à Madagascar
+          </h1>
+          <p class="text-xl mb-8">
+            Découvrez notre collection unique de vêtements et accessoires.
+          </p>
+          <a href="/collections" class="btn-primary">
+            Voir la Collection
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-playfair font-bold text-center mb-12" data-aos="fade-up">
+          Nos Produits Phares
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[1, 2, 3].map((item) => (
+            <div 
+              class="bg-white rounded-lg overflow-hidden shadow-lg" 
+              data-aos="fade-up"
+              data-aos-delay={item * 100}
+            >
+              <img 
+                src={`/product-${item}.jpg`} 
+                alt="Produit" 
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Produit Tendance</h3>
+                <p class="text-gray-600 mb-4">
+                  Description du produit avec ses caractéristiques uniques.
+                </p>
+                <a href="/collections" class="text-primary hover:underline">
+                  En savoir plus →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right">
+            <img 
+              src="/founder.jpg" 
+              alt="Fondatrice" 
+              class="rounded-lg shadow-lg"
+            />
+          </div>
+          <div data-aos="fade-left">
+            <h2 class="text-4xl font-playfair font-bold mb-6">
+              Notre Histoire
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Fondée par Hobimalala Manitiriniaina Edena Yolande, H-Mey MDG est née d'une passion pour la mode et d'un désir de mettre en valeur le style malgache.
+            </p>
+            <a href="/about" class="btn-primary">
+              En savoir plus
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Delivery Section -->
+    <section class="py-20 bg-gray-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+          <h2 class="text-4xl font-playfair font-bold mb-6">
+            Livraison dans tout Madagascar
+          </h2>
+          <p class="text-gray-400 mb-8">
+            Nous assurons une livraison rapide et sécurisée partout à Madagascar. Votre satisfaction est notre priorité.
+          </p>
+          <a href="/contact" class="btn-primary">
+            Contactez-nous
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
